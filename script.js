@@ -33,7 +33,6 @@ preloadImages();
 document.getElementById("btnSong").addEventListener("click", playMusic);
 let a = Math.floor(Math.random()*(2+1));
 if(a===0){
-    alert(a)
     a=3
 }
 let song = "pause";
