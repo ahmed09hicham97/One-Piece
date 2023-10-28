@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+:root {
+    --poppins: 'Poppins', sans-serif;
+
+    --bgColor: var(--bgColor-dark);
+    --textColor: var(--textColor-dark);
+
+      /* Mode clair */
+      --bgColor-light: #FFFFFF;
+      --textColor-light: #333333;
+  
+      /* Mode sombre */
+      --bgColor-dark: #121218;
+      --textColor-dark: #FFFFFF;
+  
+}
+
 #blog{
     display: flex;
     justify-content: center;
@@ -5,24 +23,63 @@
     gap: 10px;
 }
 #left{
-    border-radius: 29px;
+    border-radius: 5px;
     background-color: whitesmoke;
 }
 #right{
-    border-radius: 29px;    
+    border-radius: 5px;    
     background-color: whitesmoke;
 }
 #main{
     width: 512px;
     height: 512px;
 }
-*{
-    background-color:black;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins);
 }
 
+body {
+    
+    height: 100vh;
+    background-color: var(--bgColor);
+}
 .img{
     width: 40px;
     height: 30px;
     background-color: whitesmoke;
 }
 
+#play{
+width: 40px;
+height: 30px;
+background-color: rgb(255, 255, 255);
+}
+#btnSong{
+    background-color: whitesmoke;
+}
+.toggle-theme #theme-btn {
+    background-color: #ffffff; 
+    color: #000000; 
+    border: 2px solid #000000; 
+    border-radius: 5px;  
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    font-size: 16px; 
+    outline: none; 
+}
+
+.toggle-theme #theme-btn:hover {
+    background-color: #E7E7E7; 
+}
+#changeThm{
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-theme{
+    display: flex;
+    justify-content: end;
+}

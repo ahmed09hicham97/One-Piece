@@ -16,8 +16,44 @@ document.getElementById("right").addEventListener("click", changePicture);
 
 function changePicture() {
     if (i < 17) {
-        i++; // Incrémente i s'il est inférieur à 6
+        i++; // Incrémente i s'il est inférieur à 17 (au lieu de 6)
         main.src = `images/${i}.jpg`; // Change la source de l'image
     }
 }
 
+document.getElementById("btnSong").addEventListener("click", playMusic);
+
+let a = 1;
+let song = "pause";
+let music = new Audio(`songs/Song${a}.mp3`); // Charger la musique une seule fois
+
+function playMusic() {
+    if (song === "pause") {
+        song = "play";
+        music.play();
+        document.getElementById("play").src = "https://cdn-icons-png.flaticon.com/512/2468/2468816.png";
+        a=2
+    } else {
+        song = "pause"; // Mettre la chanson en pause
+        music.pause();
+        document.getElementById("play").src = "https://thumbnail.imgbin.com/6/15/4/imgbin-button-android-yellow-button-hBXq5FZuDybq9a0V4dXq2zuZ8_t.jpg";
+    }
+}
+
+
+const themeBtn = document.getElementById("theme-btn");
+let darkMode = true;
+
+themeBtn.addEventListener("click", () => {
+    if (darkMode) {
+        document.documentElement.style.setProperty('--bgColor', 'var(--bgColor-light)');
+        document.documentElement.style.setProperty('--textColor', 'var(--textColor-light)');
+        document.getElementById("changeThm").src = "https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/light-mode-toggle-icon.png"
+        darkMode = false;
+    } else {
+        document.documentElement.style.setProperty('--bgColor', 'var(--bgColor-dark)');
+        document.documentElement.style.setProperty('--textColor', 'var(--textColor-dark)');
+        document.getElementById("changeThm").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe6diERHN6SJiWWFLnVUQ2XCQ0O58FNgRQ3yT2uxWFxT1Q1kdyXKSKfG4Hhzj2veZnzrY&usqp=CAU"
+        darkMode = true;
+    }
+});
