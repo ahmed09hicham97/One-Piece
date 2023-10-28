@@ -31,8 +31,11 @@ preloadImages();
 
 
 document.getElementById("btnSong").addEventListener("click", playMusic);
-
-let a = 1;
+let a = Math.floor(Math.random()*(2+1));
+if(a===0){
+    alert(a)
+    a=3
+}
 let song = "pause";
 let music = new Audio(`songs/Song${a}.mp3`); // Charger la musique une seule fois
 
@@ -41,7 +44,6 @@ function playMusic() {
         song = "play";
         music.play();
         document.getElementById("play").src = "https://cdn-icons-png.flaticon.com/512/16/16427.png";
-        a=2
     } else {
         song = "pause"; // Mettre la chanson en pause
         music.pause();
